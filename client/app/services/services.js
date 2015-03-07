@@ -14,6 +14,22 @@ angular.module('shortly.services', [])
     getLinks: getLinks
   }
 })
+.factory('Shorten', function ($http){
+  var addLink = function(link){
+    return $http({
+      method: 'POST',
+      url: '/api/links',
+      data: link
+    }).then(function(resp){
+      return resp.data;
+    })
+  };
+
+  return {
+    addLink: addLink
+  }
+
+})
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
   // it is responsible for authenticating our user
