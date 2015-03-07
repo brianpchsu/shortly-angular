@@ -1,4 +1,12 @@
 <div id='container'>
-
+  <div ng-controller="GlobalController">
+    <div global-nav></div>
+  </div>
+  <div>
+    <form>
+      <input type="url" ng-model="link.url" placeholder="Enter a Link to Shorten"/>
+      <button type="submit">Shorten</button>
+    </form>
+  </div>
 </div>
 

@@ -4,8 +4,16 @@ angular.module('shortly.global', [])
   $scope.showNav = function() {
     return Auth.isAuth();
   };
-  $scope.go = function(event, location){
-    event.stopPropagation();
-    $location.path = location;
+
+
+  $scope.signout = function(event){
+    Auth.signout();
+    $location.path('/signin');
+  };
+
+})
+.directive('globalNav', function(){
+  return {
+    templateUrl: "app/global/global-nav.html"
   }
-});
+})

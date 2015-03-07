@@ -5,17 +5,10 @@
     <title>Shortly</title>
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
   </head>
-  <body ng-controller='GlobalController'>
+  <body>
     <header>
       <h1>Shortly</h1>
-      <nav ng-show="false">
-        <ul>
-          <li><a ng-click="go($event, '/links')" href="/#/links">Links</a></li>
-          <li><a ng-click="go($event, '/shorten')" href="/#/shorten">Shorten</a></li>
-        </ul>
-      </nav>
     </header>
-
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
     <div ng-view></div>
 
