@@ -3,8 +3,8 @@
     <div global-nav></div>
   </div>
   <ul>
-    <li>
-      <a href="{{ link.url }}">{{ link.title }}</a>
+    <li ng-repeat="link in Links">
+      <a href="{{ link.base_url }}/{{link.code}}">{{ link.title }} {{ link.base_url }}/{{link.code}}</a>
     </li>
   </ul>
 </div>
