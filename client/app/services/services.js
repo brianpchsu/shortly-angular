@@ -14,7 +14,7 @@ angular.module('shortly.services', [])
     getLinks: getLinks
   }
 })
-.factory('Shorten', function ($http){
+.factory('Shorten', function ($http, $rootScope){
   var addLink = function(link){
     return $http({
       method: 'POST',
@@ -24,7 +24,6 @@ angular.module('shortly.services', [])
       return resp.data;
     })
   };
-
   return {
     addLink: addLink
   }
