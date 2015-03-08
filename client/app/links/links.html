@@ -2,9 +2,18 @@
   <div ng-controller="GlobalController">
     <div global-nav></div>
   </div>
+  <input type="text" ng-model="search" placeholder="Filter Links">
   <ul>
-    <li ng-repeat="link in Links">
-      <a href="{{ link.base_url }}/{{link.code}}">{{ link.title }} {{ link.base_url }}/{{link.code}}</a>
+    <li class="link" ng-repeat="link in Links | filter:search">
+      <a href="{{ link.base_url }}/api/links/{{link.code}}">
+        <img src="assets/redirect_icon.png" alt="Link">
+        <div class="title">{{ link.title }}</div>
+        <span class="original">{{ link.url }}</span>
+        <span class="info"> {{ link.base_url }}/{{link.code}}</span>
+        <div class="visits">
+          <span class="count">{{ link.visits }}</span> visits
+        </div>
+      </a>
     </li>
   </ul>
 </div>
